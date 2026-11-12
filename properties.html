@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>العقارات | NOVA</title>
+  <meta name="description" content="تصفح الشقق والفيلات والوحدات التجارية والمكاتب مع فلاتر بحث وترتيب متعدد." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body>
+  <div data-site-header></div>
+
+  <main id="main" tabindex="-1">
+    <div class="page-band">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التصفح">
+          <ol>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li aria-current="page">العقارات</li>
+          </ol>
+        </nav>
+        <h1>تصفح العقارات</h1>
+        <p>فلاتر تعمل معًا لتضييق النتائج. جميع الأسعار والبيانات توضيحية لأغراض العرض.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="listing-layout" id="filterForm" aria-label="فلترة العقارات">
+        <aside class="filter-panel" id="filterPanel" aria-label="خيارات الفلترة">
+          <div class="filter-head">
+            <h2>تصفية النتائج</h2>
+          </div>
+          <div class="filter-group">
+            <div class="field full">
+              <label for="fLocation">الموقع</label>
+              <select id="fLocation" name="location"></select>
+            </div>
+            <div class="field full">
+              <label for="fType">نوع العقار</label>
+              <select id="fType" name="type"></select>
+            </div>
+            <div class="field full">
+              <label for="fPurpose">نوع العملية</label>
+              <select id="fPurpose" name="purpose">
+                <option value="">بيع وإيجار</option>
+                <option value="sale">للبيع</option>
+                <option value="rent">للإيجار</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fMinPrice">أقل سعر</label>
+              <input id="fMinPrice" name="minPrice" type="number" min="0" step="1000" inputmode="numeric" />
+            </div>
+            <div class="field">
+              <label for="fMaxPrice">أعلى سعر</label>
+              <input id="fMaxPrice" name="maxPrice" type="number" min="0" step="1000" inputmode="numeric" />
+            </div>
+            <div class="field">
+              <label for="fBeds">غرف النوم</label>
+              <select id="fBeds" name="beds">
+                <option value="">أي عدد</option>
+                <option value="1">1 أو أكثر</option>
+                <option value="2">2 أو أكثر</option>
+                <option value="3">3 أو أكثر</option>
+                <option value="4">4 أو أكثر</option>
+                <option value="5">5 أو أكثر</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fBaths">الحمامات</label>
+              <select id="fBaths" name="baths">
+                <option value="">أي عدد</option>
+                <option value="1">1 أو أكثر</option>
+                <option value="2">2 أو أكثر</option>
+                <option value="3">3 أو أكثر</option>
+                <option value="4">4 أو أكثر</option>
+                <option value="5">5 أو أكثر</option>
+                <option value="6">6 أو أكثر</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fMinArea">أقل مساحة (م²)</label>
+              <input id="fMinArea" name="minArea" type="number" min="0" step="5" inputmode="numeric" />
+            </div>
+            <div class="field">
+              <label for="fMaxArea">أكبر مساحة (م²)</label>
+              <input id="fMaxArea" name="maxArea" type="number" min="0" step="5" inputmode="numeric" />
+            </div>
+            <div class="field full">
+              <label for="fFinishing">حالة التشطيب</label>
+              <select id="fFinishing" name="finishing"></select>
+            </div>
+          </div>
+          <div class="filter-actions">
+            <button class="btn btn-outline btn-sm" type="reset" id="resetFilters">إعادة تعيين</button>
+            <button class="btn btn-primary btn-sm" type="button" id="closeFilters" aria-controls="filterPanel">عرض النتائج</button>
+          </div>
+        </aside>
+
+        <section aria-labelledby="results-heading">
+          <div class="search-input">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <label class="visually-hidden" for="searchQuery">ابحث بالاسم أو الموقع</label>
+            <input id="searchQuery" name="q" type="search" placeholder="ابحث بالاسم أو الموقع أو النوع" autocomplete="off" />
+          </div>
+
+          <div class="results-toolbar">
+            <div>
+              <h2 class="results-count" id="results-heading" aria-live="polite"></h2>
+            </div>
+            <div class="sort-field">
+              <button class="btn btn-outline btn-sm filter-toggle" type="button" id="toggleFilters" aria-expanded="false" aria-controls="filterPanel">
+                <span class="filter-toggle-label">الفلاتر</span>
+              </button>
+              <label for="sortSelect">ترتيب حسب</label>
+              <select id="sortSelect" name="sort">
+                <option value="price-asc">السعر من الأقل للأعلى</option>
+                <option value="price-desc">السعر من الأعلى للأقل</option>
+                <option value="newest" selected>الأحدث أولاً</option>
+                <option value="area-desc">المساحة من الأكبر للأصغر</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="active-filters" data-active-filters></div>
+          <p class="filter-hint" data-range-hint hidden>الحد الأدنى للسعر أكبر من الحد الأقصى، يرجى تعديل القيم.</p>
+
+          <div class="listing-grid" data-results></div>
+
+          <div class="empty-state" data-empty hidden>
+            <div class="empty-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6"/></svg>
+            </div>
+            <h2>لا توجد عقارات مطابقة</h2>
+            <p>جرّب تعديل الفلاتر أو توسيع نطاق البحث، ويمكنك إعادة تعيين كل الفلاتر بضغطة واحدة.</p>
+            <button class="btn btn-primary" type="button" data-clear-all>مسح كل الفلاتر</button>
+          </div>
+        </section>
+      </form>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script type="module" src="/assets/js/properties.js"></script>
+</body>
+</html>

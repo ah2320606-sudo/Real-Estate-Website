@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA | اكتشف منزلك القادم</title>
+  <meta name="description" content="NOVA منصة عقارية تعرض مجموعة مختارة من الشقق والفيلات والوحدات التجارية في مصر." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body>
+  <div data-site-header></div>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img src="https://images.pexels.com/photos/26859066/pexels-photo-26859066.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="فيلا حديثة بحمام سباحة مضاء عند الغروب" data-fallback />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">عقارات مختارة في مصر</span>
+          <h1 id="hero-title">اكتشف منزلك القادم</h1>
+          <p class="hero-lead">شقق وفيلات ووحدات تجارية في أفضل مواقع القاهرة والإسكندرية، مع معلومات واضحة وصور مطابقة لكل عقار.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="properties.html">استكشف العقارات</a>
+            <a class="btn btn-light" href="contact.html">تواصل معنا</a>
+          </div>
+        </div>
+
+        <form class="search-panel" id="heroSearch" role="search" aria-label="البحث عن عقار">
+          <div class="search-grid">
+            <div class="field">
+              <label for="heroLocation">الموقع</label>
+              <select id="heroLocation" name="location"></select>
+            </div>
+            <div class="field">
+              <label for="heroType">نوع العقار</label>
+              <select id="heroType" name="type"></select>
+            </div>
+            <div class="field">
+              <label for="heroPurpose">نوع العملية</label>
+              <select id="heroPurpose" name="purpose">
+                <option value="">بيع أو إيجار</option>
+                <option value="sale">للبيع</option>
+                <option value="rent">للإيجار</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="heroMinPrice">الحد الأدنى للسعر</label>
+              <input id="heroMinPrice" name="minPrice" type="number" min="0" step="1000" inputmode="numeric" placeholder="مثال: 5000000" />
+            </div>
+            <div class="field">
+              <label for="heroMaxPrice">الحد الأقصى للسعر</label>
+              <input id="heroMaxPrice" name="maxPrice" type="number" min="0" step="1000" inputmode="numeric" placeholder="مثال: 20000000" />
+            </div>
+            <button class="btn btn-gold" type="submit">بحث</button>
+          </div>
+          <p class="field-error" id="heroSearchError" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">مختارات NOVA</span>
+            <h2 id="featured-title" class="section-title">عقارات مختارة بعناية</h2>
+            <p>نماذج توضيحية من البيانات المعروضة في هذا الموقع، ويمكنك فتح كل بطاقة لرؤية التفاصيل الكاملة.</p>
+          </div>
+        </div>
+        <div class="card-grid" data-featured></div>
+        <div class="section-foot">
+          <a class="btn btn-outline" href="properties.html">عرض جميع العقارات</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">تصفح حسب النوع</span>
+            <h2 id="categories-title" class="section-title">أنواع العقارات</h2>
+          </div>
+        </div>
+        <div class="category-grid" data-categories></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">لماذا NOVA؟</span>
+            <h2 id="why-title" class="section-title">تجربة عقارية واضحة من البداية للنهاية</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-block reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3.1-5.4 3.1 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+            </div>
+            <h3>العقارات المختارة بعناية</h3>
+            <p>كل وحدة معروضة تمر بمراجعة لنوعها وموقعها ومواصفاتها قبل إضافتها إلى القائمة.</p>
+          </article>
+          <article class="feature-block reveal" style="--delay: 100ms">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+            </div>
+            <h3>معلومات واضحة</h3>
+            <p>المساحة وعدد الغرف والتشطيب وحالة التسليم معروضة بوضوح، دون معلومات غير موجودة.</p>
+          </article>
+          <article class="feature-block reveal" style="--delay: 200ms">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3>تجربة بحث سهلة</h3>
+            <p>فلاتر متعددة تعمل معًا، مع ترتيب للنتائج وحفظ للعقارات المفضلة لمتابعتها لاحقًا.</p>
+          </article>
+          <article class="feature-block reveal" style="--delay: 300ms">
+            <div class="feature-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+            </div>
+            <h3>دعم العملاء</h3>
+            <p>صفحة التواصل تتيح إرسال استفسارك عن أي عقار، وتوضح بيانات التواصل المعتمدة لدينا.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="stats-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">مؤشرات العرض</span>
+            <h2 id="stats-title" class="section-title">لمحة عن محتوى هذا النموذج</h2>
+          </div>
+        </div>
+        <div class="stat-grid" data-stats>
+          <div class="stat reveal">
+            <div class="stat-value" data-count="0">٠</div>
+            <p class="stat-label">عقار معروض في النموذج</p>
+          </div>
+          <div class="stat reveal" style="--delay: 100ms">
+            <div class="stat-value" data-count="0">٠</div>
+            <p class="stat-label">نوعًا من العقارات</p>
+          </div>
+          <div class="stat reveal" style="--delay: 200ms">
+            <div class="stat-value" data-count="0">٠</div>
+            <p class="stat-label">منطقة في مصر</p>
+          </div>
+          <div class="stat reveal" style="--delay: 300ms">
+            <div class="stat-value" data-count="0">٠</div>
+            <p class="stat-label">مستشارين توضيحيين</p>
+          </div>
+        </div>
+        <p class="stat-note">أرقام محسوبة من البيانات المعروضة في هذا الموقع التجريبي، وليست إنجازات مؤسسية موثقة.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">آراء العملاء</span>
+            <h2 id="testimonials-title" class="section-title">ماذا يقول الزوار</h2>
+          </div>
+        </div>
+        <div class="testimonial-grid" data-testimonials></div>
+        <p class="disclaimer">الآراء المعروضة توضيحية لأغراض العرض فقط، ولا تنسب إلى أشخاص حقيقيين.</p>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div class="reveal">
+          <h2 id="cta-title">هل تبحث عن عقار بمواصفات محددة؟</h2>
+          <p>أرسل لنا احتياجك من الموقع والنوع والميزانية، وسيتواصل معك فريقنا عند تفعيل قنوات التواصل الرسمية.</p>
+        </div>
+        <div class="cta-actions reveal" style="--delay: 150ms">
+          <a class="btn btn-gold" href="contact.html">تواصل معنا</a>
+          <a class="btn btn-light" href="properties.html">تصفح العقارات</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script type="module" src="/assets/js/home.js"></script>
+</body>
+</html>

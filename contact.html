@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا | NOVA</title>
+  <meta name="description" content="أرسل استفسارك عن أي عقار أو احتياجك العقاري إلى فريق NOVA." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body>
+  <div data-site-header></div>
+
+  <main id="main" tabindex="-1">
+    <div class="page-band">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="مسار التصفح">
+          <ol>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li aria-current="page">تواصل معنا</li>
+          </ol>
+        </nav>
+        <h1>تواصل معنا</h1>
+        <p>أخبرنا باحتياجك وسنرد عليك بأفضل الخيارات المتاحة.</p>
+      </div>
+    </div>
+
+    <div class="container contact-layout">
+      <section class="contact-info" aria-labelledby="contact-info-title">
+        <h2 id="contact-info-title">طرق التواصل</h2>
+        <p>بيانات التواصل التالية توضيحية في هذه النسخة، وستُحدَّث عند توفر القنوات الرسمية.</p>
+        <div data-contact-info></div>
+      </section>
+
+      <section class="contact-form-card" aria-labelledby="form-title">
+        <div data-form-view>
+          <h2 id="form-title">أرسل رسالتك</h2>
+          <p>الحقول المعلَّمة بنجمة مطلوبة.</p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="cName">الاسم الكامل <span aria-hidden="true">*</span></label>
+                <input id="cName" name="name" type="text" autocomplete="name" required aria-describedby="cNameError" />
+                <p class="field-error" id="cNameError"></p>
+              </div>
+              <div class="field">
+                <label for="cEmail">البريد الإلكتروني <span aria-hidden="true">*</span></label>
+                <input id="cEmail" name="email" type="email" autocomplete="email" inputmode="email" dir="ltr" required aria-describedby="cEmailError" />
+                <p class="field-error" id="cEmailError"></p>
+              </div>
+              <div class="field">
+                <label for="cPhone">رقم الهاتف <span aria-hidden="true">*</span></label>
+                <input id="cPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr" placeholder="01xxxxxxxxx" required aria-describedby="cPhoneError" />
+                <p class="field-error" id="cPhoneError"></p>
+              </div>
+              <div class="field">
+                <label for="cSubject">موضوع الرسالة <span aria-hidden="true">*</span></label>
+                <select id="cSubject" name="subject" required aria-describedby="cSubjectError">
+                  <option value="">اختر الموضوع</option>
+                  <option value="inquiry">استفسار عن عقار محدد</option>
+                  <option value="buy">الرغبة في الشراء</option>
+                  <option value="rent">الرغبة في الإيجار</option>
+                  <option value="sell">عرض عقار للبيع أو الإيجار</option>
+                  <option value="viewing">طلب معاينة</option>
+                  <option value="other">أخرى</option>
+                </select>
+                <p class="field-error" id="cSubjectError"></p>
+              </div>
+              <div class="field full">
+                <label for="cMessage">رسالتك <span aria-hidden="true">*</span></label>
+                <textarea id="cMessage" name="message" rows="5" required aria-describedby="cMessageError"></textarea>
+                <p class="field-error" id="cMessageError"></p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <p class="form-note">هذه النسخة للعرض فقط ولا ترسل الرسالة فعليًا.</p>
+              <button class="btn btn-primary" type="submit">إرسال الرسالة</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-success" data-form-success role="status" hidden>
+          <span class="success-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <h2>تم التحقق من بياناتك</h2>
+          <p>هذه نسخة تجريبية للواجهة فقط، ولم يتم إرسال رسالتك إلى أي جهة. عند تفعيل قنوات التواصل الرسمية ستصل الرسائل إلى فريق NOVA.</p>
+          <button class="btn btn-outline" type="button" data-reset-form>إرسال رسالة أخرى</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script type="module" src="/assets/js/contact.js"></script>
+</body>
+</html>
