@@ -3,7 +3,8 @@ import { fileURLToPath } from 'node:url';
 
 const page = (name) => fileURLToPath(new URL(name, import.meta.url));
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/Real-Estate-Website/' : '/',
   build: {
     rollupOptions: {
       input: {
@@ -17,4 +18,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

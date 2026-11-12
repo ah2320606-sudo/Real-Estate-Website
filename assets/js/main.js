@@ -103,7 +103,7 @@ document.addEventListener(
     const image = event.target;
     if (!(image instanceof HTMLImageElement) || !image.hasAttribute('data-fallback') || image.dataset.failed) return;
     image.dataset.failed = 'true';
-    image.src = '/placeholder.svg';
+    image.src = `${import.meta.env.BASE_URL}placeholder.svg`;
   },
   true,
 );
